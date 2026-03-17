@@ -1,0 +1,4 @@
+tests\SampleTest.class
+pages\SamplePage.class
+tests\BasePageDependencyTest.class
+tests\ParallelTest.class

@@ -1,0 +1,37 @@
+[
+  {
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "role": "admin",
+    "expectSuccess": true,
+    "description": "Đăng nhập với user hợp lệ"
+  },
+  {
+    "username": "standard_user",
+    "password": "wrong_password",
+    "role": "user",
+    "expectSuccess": false,
+    "description": "Đăng nhập với user sai password"
+  },
+  {
+    "username": "locked_out_user",
+    "password": "secret_sauce",
+    "role": "user",
+    "expectSuccess": false,
+    "description": "Đăng nhập với user bị khóa"
+  },
+  {
+    "username": "",
+    "password": "secret_sauce",
+    "role": "guest",
+    "expectSuccess": false,
+    "description": "Đăng nhập với user rỗng"
+  },
+  {
+    "username": "problem_user",
+    "password": "secret_sauce",
+    "role": "user",
+    "expectSuccess": true,
+    "description": "Đăng nhập với user bất thường"
+  }
+]

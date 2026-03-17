@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="POM Framework Suite" parallel="methods" thread-count="3">
+    <!-- Cấu hình parameters mặc định -->
+    <parameter name="browser" value="chrome"/>
+    <parameter name="env" value="dev"/>
+
+    <listeners>
+        <listener class-name="framework.utils.RetryListener"/>
+    </listeners>
+    
+    <test name="All Main Automation Tests">
+        <!-- Chú ý thẻ groups quy định phần nào được chạy -->
+        <!--  Mở comment bên dưới để chạy Smoke test hoặc Regression Test  -->
+        <!--
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        -->
+        <classes>
+            <class name="tests.LoginTest"/>
+            <class name="tests.CartTest"/>
+            <class name="tests.LoginDDTTest"/>
+            <class name="tests.UserLoginTest"/>
+            <class name="tests.CheckoutTest"/>
+            <class name="tests.FlakySimulationTest"/>
+        </classes>
+    </test>
+</suite>

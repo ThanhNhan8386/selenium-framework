@@ -1,0 +1,39 @@
+﻿[ERROR] COMPILATION ERROR : 
+[ERROR] /C:/NAMCUOI/PROJECTTESTTUAN9/src/test/java/bai1_base/base/BaseTest.java:[3,13] cannot find symbol
+  symbol:   class ScreenshotUtil
+  location: package utils
+[ERROR] /C:/NAMCUOI/PROJECTTESTTUAN9/src/test/java/bai4_json_faker/tests/CheckoutTest.java:[4,29] cannot find symbol
+  symbol:   class TestDataFactory
+  location: package bai4_json_faker.utils
+[ERROR] /C:/NAMCUOI/PROJECTTESTTUAN9/src/test/java/bai1_base/base/BaseTest.java:[51,13] cannot find symbol
+  symbol:   variable ScreenshotUtil
+  location: class bai1_base.base.BaseTest
+[ERROR] /C:/NAMCUOI/PROJECTTESTTUAN9/src/test/java/bai4_json_faker/tests/CheckoutTest.java:[13,44] cannot find symbol
+  symbol:   variable TestDataFactory
+  location: class bai4_json_faker.tests.CheckoutTest
+[ERROR] /C:/NAMCUOI/PROJECTTESTTUAN9/src/test/java/bai6_retry/utils/RetryAnalyzer.java:[11,24] cannot find symbol
+  symbol:   variable ConfigReader
+  location: class bai6_retry.utils.RetryAnalyzer
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:testCompile (default-testCompile) on project pom-framework: Compilation failure: Compilation failure: 
+[ERROR] /C:/NAMCUOI/PROJECTTESTTUAN9/src/test/java/bai1_base/base/BaseTest.java:[3,13] cannot find symbol
+[ERROR]   symbol:   class ScreenshotUtil
+[ERROR]   location: package utils
+[ERROR] /C:/NAMCUOI/PROJECTTESTTUAN9/src/test/java/bai4_json_faker/tests/CheckoutTest.java:[4,29] cannot find symbol
+[ERROR]   symbol:   class TestDataFactory
+[ERROR]   location: package bai4_json_faker.utils
+[ERROR] /C:/NAMCUOI/PROJECTTESTTUAN9/src/test/java/bai1_base/base/BaseTest.java:[51,13] cannot find symbol
+[ERROR]   symbol:   variable ScreenshotUtil
+[ERROR]   location: class bai1_base.base.BaseTest
+[ERROR] /C:/NAMCUOI/PROJECTTESTTUAN9/src/test/java/bai4_json_faker/tests/CheckoutTest.java:[13,44] cannot find symbol
+[ERROR]   symbol:   variable TestDataFactory
+[ERROR]   location: class bai4_json_faker.tests.CheckoutTest
+[ERROR] /C:/NAMCUOI/PROJECTTESTTUAN9/src/test/java/bai6_retry/utils/RetryAnalyzer.java:[11,24] cannot find symbol
+[ERROR]   symbol:   variable ConfigReader
+[ERROR]   location: class bai6_retry.utils.RetryAnalyzer
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-03-17T14:28:48 ICT" name="Selenium Framework Test Suite" finished-at="2026-03-17T14:29:06 ICT" duration-ms="18463">
+    <groups>
+    </groups>
+    <test started-at="2026-03-17T14:28:48 ICT" name="Sample Tests" finished-at="2026-03-17T14:29:06 ICT" duration-ms="18463">
+      <class name="tests.SampleTest">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:tests.SampleTest@5e82df6a]" started-at="2026-03-17T14:28:48 ICT" name="setUp" finished-at="2026-03-17T14:28:50 ICT" duration-ms="2447" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[dev]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:tests.SampleTest@5e82df6a]" started-at="2026-03-17T14:28:48 ICT" name="setUp" finished-at="2026-03-17T14:28:54 ICT" duration-ms="5916" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[dev]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:tests.SampleTest@5e82df6a]" started-at="2026-03-17T14:28:48 ICT" name="setUp" finished-at="2026-03-17T14:28:53 ICT" duration-ms="4821" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[dev]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testGoogleHomePage()[pri:0, instance:tests.SampleTest@5e82df6a]" started-at="2026-03-17T14:28:50 ICT" name="testGoogleHomePage" finished-at="2026-03-17T14:28:51 ICT" duration-ms="993" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGoogleHomePage -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult,java.lang.reflect.Method)[pri:0, instance:tests.SampleTest@5e82df6a]" started-at="2026-03-17T14:28:51 ICT" name="tearDown" finished-at="2026-03-17T14:28:56 ICT" duration-ms="4869" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testGoogleHomePage status=SUCCESS method=SampleTest.testGoogleHomePage()[pri:0, instance:tests.SampleTest@5e82df6a] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void tests.SampleTest.testGoogleHomePage()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="testAnotherPage()[pri:0, instance:tests.SampleTest@5e82df6a]" started-at="2026-03-17T14:28:53 ICT" name="testAnotherPage" finished-at="2026-03-17T14:28:54 ICT" duration-ms="897" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAnotherPage -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult,java.lang.reflect.Method)[pri:0, instance:tests.SampleTest@5e82df6a]" started-at="2026-03-17T14:28:54 ICT" name="tearDown" finished-at="2026-03-17T14:28:56 ICT" duration-ms="2701" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testAnotherPage status=SUCCESS method=SampleTest.testAnotherPage()[pri:0, instance:tests.SampleTest@5e82df6a] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void tests.SampleTest.testAnotherPage()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="testFailedTest()[pri:0, instance:tests.SampleTest@5e82df6a]" started-at="2026-03-17T14:28:54 ICT" name="testFailedTest" finished-at="2026-03-17T14:28:55 ICT" duration-ms="936" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[This is an intentional failure to test screenshot capture]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: This is an intentional failure to test screenshot capture
+at org.testng.Assert.fail(Assert.java:111)
+at tests.SampleTest.testFailedTest(SampleTest.java:23)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFailedTest -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult,java.lang.reflect.Method)[pri:0, instance:tests.SampleTest@5e82df6a]" started-at="2026-03-17T14:28:55 ICT" name="tearDown" finished-at="2026-03-17T14:28:57 ICT" duration-ms="1690" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testFailedTest status=FAILURE method=SampleTest.testFailedTest()[pri:0, instance:tests.SampleTest@5e82df6a] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void tests.SampleTest.testFailedTest()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.SampleTest -->
+      <class name="tests.ParallelTest">
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:tests.ParallelTest@43195e57]" started-at="2026-03-17T14:28:56 ICT" name="setUp" finished-at="2026-03-17T14:29:00 ICT" duration-ms="4135" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[dev]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:tests.ParallelTest@43195e57]" started-at="2026-03-17T14:28:56 ICT" name="setUp" finished-at="2026-03-17T14:29:02 ICT" duration-ms="5981" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[dev]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUp(java.lang.String,java.lang.String)[pri:0, instance:tests.ParallelTest@43195e57]" started-at="2026-03-17T14:28:57 ICT" name="setUp" finished-at="2026-03-17T14:29:01 ICT" duration-ms="4426" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[dev]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testParallelExecution1()[pri:0, instance:tests.ParallelTest@43195e57]" started-at="2026-03-17T14:29:00 ICT" name="testParallelExecution1" finished-at="2026-03-17T14:29:04 ICT" duration-ms="3254" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testParallelExecution1 -->
+        <test-method signature="testParallelExecution3()[pri:0, instance:tests.ParallelTest@43195e57]" started-at="2026-03-17T14:29:01 ICT" name="testParallelExecution3" finished-at="2026-03-17T14:29:04 ICT" duration-ms="3180" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testParallelExecution3 -->
+        <test-method signature="testParallelExecution2()[pri:0, instance:tests.ParallelTest@43195e57]" started-at="2026-03-17T14:29:02 ICT" name="testParallelExecution2" finished-at="2026-03-17T14:29:06 ICT" duration-ms="3854" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testParallelExecution2 -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult,java.lang.reflect.Method)[pri:0, instance:tests.ParallelTest@43195e57]" started-at="2026-03-17T14:29:04 ICT" name="tearDown" finished-at="2026-03-17T14:29:06 ICT" duration-ms="2127" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testParallelExecution1 status=SUCCESS method=ParallelTest.testParallelExecution1()[pri:0, instance:tests.ParallelTest@43195e57] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void tests.ParallelTest.testParallelExecution1() throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult,java.lang.reflect.Method)[pri:0, instance:tests.ParallelTest@43195e57]" started-at="2026-03-17T14:29:04 ICT" name="tearDown" finished-at="2026-03-17T14:29:06 ICT" duration-ms="1677" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testParallelExecution3 status=SUCCESS method=ParallelTest.testParallelExecution3()[pri:0, instance:tests.ParallelTest@43195e57] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void tests.ParallelTest.testParallelExecution3() throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult,java.lang.reflect.Method)[pri:0, instance:tests.ParallelTest@43195e57]" started-at="2026-03-17T14:29:06 ICT" name="tearDown" finished-at="2026-03-17T14:29:06 ICT" duration-ms="162" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testParallelExecution2 status=SUCCESS method=ParallelTest.testParallelExecution2()[pri:0, instance:tests.ParallelTest@43195e57] output={null}]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public void tests.ParallelTest.testParallelExecution2() throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.ParallelTest -->
+    </test> <!-- Sample Tests -->
+  </suite> <!-- Selenium Framework Test Suite -->
+</testng-results>

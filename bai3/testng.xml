@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LoginTestSuite" verbose="1">
+    
+    <listeners>
+        <listener class-name="listeners.TestNameListener"/>
+    </listeners>
+    
+    <!-- Test Suite cho Smoke Testing -->
+    <test name="SmokeTest" preserve-order="true">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
+    
+    <!-- Test Suite cho Regression Testing -->
+    <test name="RegressionTest" preserve-order="true">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
+    
+</suite>

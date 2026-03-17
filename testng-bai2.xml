@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Bai 2 Suite" parallel="methods" thread-count="3">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="env" value="dev"/>
+    <test name="Bai 2 Tests">
+        <classes>
+            <class name="bai2_pom.tests.LoginTest"/>
+            <class name="bai2_pom.tests.CartTest"/>
+        </classes>
+    </test>
+</suite>

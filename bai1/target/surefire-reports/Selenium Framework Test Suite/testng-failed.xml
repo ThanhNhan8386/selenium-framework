@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="methods" name="Failed suite [Selenium Framework Test Suite]" verbose="0">
+  <parameter name="browser" value="chrome"/>
+  <parameter name="env" value="dev"/>
+  <test thread-count="3" parallel="methods" name="Sample Tests(failed)" verbose="0">
+    <classes>
+      <class name="tests.SampleTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testFailedTest"/>
+        </methods>
+      </class> <!-- tests.SampleTest -->
+    </classes>
+  </test> <!-- Sample Tests(failed) -->
+</suite> <!-- Failed suite [Selenium Framework Test Suite] -->
