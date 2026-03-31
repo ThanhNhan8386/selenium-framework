@@ -16,7 +16,7 @@ public class InventoryPage extends BasePage {
     @FindBy(className = "shopping_cart_badge")
     private WebElement cartBadge;
 
-    @FindBy(css = ".inventory_item button")
+    @FindBy(css = ".inventory_item button[id*='add-to-cart']")
     private List<WebElement> addToCartButtons;
 
     @FindBy(className = "inventory_item_name")
@@ -41,13 +41,53 @@ public class InventoryPage extends BasePage {
     }
 
     public InventoryPage addItemByName(String name) {
-        for (int i = 0; i < itemNames.size(); i++) {
-            if (getText(itemNames.get(i)).equals(name)) {
-                waitAndClick(addToCartButtons.get(i));
-                break;
+        try {
+            // Sử dụng XPath để tìm button chính xác dựa trên tên item
+            String xpath = String.format("//div[contains(@class,'inventory_item_name') and text()='%s']/ancestor::div[contains(@class,'inventory_item')]//button[contains(text(),'Add to cart')]", name);
+            WebElement addButton = driver.findElement(By.xpath(xpath));
+            
+            waitAndClick(addButton);
+            
+            // Đợi một chút để UI cập nhật
+            Thread.sleep(500);
+            
+        } catch (Exception e) {
+            // Fallback: Thử XPath khác
+            try {
+                String xpath2 = String.format("//div[@class='inventory_item_name' and text()='%s']/../following-sibling::div//button[contains(@id,'add-to-cart')]", name);
+                WebElement addButton2 = driver.findElement(By.xpath(xpath2));
+                
+                waitAndClick(addButton2);
+                Thread.sleep(500);
+                
+            } catch (Exception e2) {
+                System.out.println("[ERROR] Could not add item to cart: " + name);
             }
         }
         return this;
+    }
+
+    private void waitForCartBadgeUpdate(int expectedCount) {
+        int maxAttempts = 20; // Tăng số lần thử
+        int attempts = 0;
+        while (attempts < maxAttempts) {
+            int currentCount = getCartItemCount();
+            System.out.println("[DEBUG] Waiting for cart count " + expectedCount + ", current: " + currentCount);
+            if (currentCount == expectedCount) {
+                System.out.println("[DEBUG] Cart count updated successfully to: " + expectedCount);
+                break;
+            }
+            try {
+                Thread.sleep(100); // Giảm thời gian chờ
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                break;
+            }
+            attempts++;
+        }
+        if (attempts >= maxAttempts) {
+            System.out.println("[DEBUG] Timeout waiting for cart count to update to: " + expectedCount);
+        }
     }
 
     public int getCartItemCount() {

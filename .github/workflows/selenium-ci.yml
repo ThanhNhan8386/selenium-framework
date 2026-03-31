@@ -27,7 +27,7 @@ jobs:
           chrome-version: stable
 
       - name: Run Selenium tests
-        run: mvn test -Dbrowser=chrome -Denv=dev -DsuiteXmlFile=testng-bai5.xml -Dheadless=true
+        run: mvn test -Dbrowser=chrome -Denv=dev -DsuiteXmlFile=testng-smoke.xml -Dheadless=true
 
       - name: Upload surefire reports (if fail)
         if: failure()
