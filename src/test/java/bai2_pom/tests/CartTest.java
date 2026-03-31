@@ -45,8 +45,6 @@ public class CartTest extends BaseTest {
         Assert.assertEquals(inventoryPage.getCartItemCount(), 2, "Cart badge count phải bằng 2");
         
         List<String> cartItemNames = inventoryPage.goToCart().getItemNames();
-        System.out.println("[DEBUG] Items in cart: " + cartItemNames);
-        
         Assert.assertTrue(cartItemNames.contains("Sauce Labs Backpack"), "Không có balo");
         Assert.assertTrue(cartItemNames.contains("Sauce Labs Bike Light"), "Không có đèn xe");
     }

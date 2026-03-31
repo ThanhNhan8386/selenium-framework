@@ -67,29 +67,6 @@ public class InventoryPage extends BasePage {
         return this;
     }
 
-    private void waitForCartBadgeUpdate(int expectedCount) {
-        int maxAttempts = 20; // Tăng số lần thử
-        int attempts = 0;
-        while (attempts < maxAttempts) {
-            int currentCount = getCartItemCount();
-            System.out.println("[DEBUG] Waiting for cart count " + expectedCount + ", current: " + currentCount);
-            if (currentCount == expectedCount) {
-                System.out.println("[DEBUG] Cart count updated successfully to: " + expectedCount);
-                break;
-            }
-            try {
-                Thread.sleep(100); // Giảm thời gian chờ
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                break;
-            }
-            attempts++;
-        }
-        if (attempts >= maxAttempts) {
-            System.out.println("[DEBUG] Timeout waiting for cart count to update to: " + expectedCount);
-        }
-    }
-
     public int getCartItemCount() {
         if (isElementVisible(By.className("shopping_cart_badge"))) {
             return Integer.parseInt(getText(cartBadge));

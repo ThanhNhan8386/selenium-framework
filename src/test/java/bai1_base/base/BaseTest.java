@@ -1,10 +1,8 @@
 package bai1_base.base;
 
+import bai1_base.factory.DriverFactory;
 import bai1_base.utils.ScreenshotUtil;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -26,25 +24,8 @@ public abstract class BaseTest {
         // Set environment property
         System.setProperty("env", env);
 
-        // Khởi tạo Selenium 4 WebDriver thẳng không cần WebDriverManager phụ thuộc mở rộng
-        WebDriver driver;
-        if (browser.equalsIgnoreCase("edge")) {
-            driver = new EdgeDriver();
-        } else {
-            ChromeOptions options = new ChromeOptions();
-            
-            // Cấu hình headless mode cho CI environment
-            String headless = System.getProperty("headless");
-            if ("true".equals(headless)) {
-                options.addArguments("--headless");
-                options.addArguments("--no-sandbox");
-                options.addArguments("--disable-dev-shm-usage");
-                options.addArguments("--disable-gpu");
-                options.addArguments("--window-size=1920,1080");
-            }
-            
-            driver = new ChromeDriver(options);
-        }
+        // Sử dụng DriverFactory để khởi tạo WebDriver
+        WebDriver driver = DriverFactory.createDriver(browser);
         
         // Lưu driver theo thread
         tlDriver.set(driver);

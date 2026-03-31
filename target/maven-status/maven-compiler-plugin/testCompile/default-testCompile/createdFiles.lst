@@ -1,4 +1,5 @@
 bai2_pom\pages\CartPage.class
+bai1_base\factory\DriverFactory.class
 bai2_pom\pages\LoginPage.class
 bai1_base\tests\DemoTest.class
 bai4_json_faker\tests\UserLoginTest.class

@@ -9,6 +9,11 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        browser: [chrome, firefox]
+        env: [dev, staging]
+      fail-fast: false
 
     steps:
       - name: Checkout source
@@ -21,25 +26,30 @@ jobs:
           java-version: '17'
           cache: maven
 
-      - name: Setup Chrome for CI
+      - name: Setup Chrome Browser
         uses: browser-actions/setup-chrome@latest
         with:
           chrome-version: stable
+        if: matrix.browser == 'chrome'
+
+      - name: Setup Firefox Browser  
+        uses: browser-actions/setup-firefox@latest
+        if: matrix.browser == 'firefox'
 
       - name: Run Selenium tests
-        run: mvn test -Dbrowser=chrome -Denv=dev -DsuiteXmlFile=testng-smoke.xml -Dheadless=true
+        run: mvn test -Dbrowser=${{ matrix.browser }} -Denv=${{ matrix.env }} -DsuiteXmlFile=testng-smoke.xml -Dheadless=true
 
       - name: Upload surefire reports (if fail)
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: surefire-reports
+          name: surefire-reports-${{ matrix.browser }}-${{ matrix.env }}
           path: target/surefire-reports/
 
       - name: Upload screenshots (if fail)
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: screenshots
+          name: screenshots-${{ matrix.browser }}-${{ matrix.env }}
           path: target/screenshots/
           if-no-files-found: ignore

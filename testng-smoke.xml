@@ -4,15 +4,45 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="env" value="dev"/>
     
-    <test name="Smoke Tests">
+    <listeners>
+        <listener class-name="org.testng.reporters.EmailableReporter"/>
+    </listeners>
+    
+    <test name="Login and Authentication Tests">
         <groups>
             <run>
                 <include name="smoke"/>
             </run>
         </groups>
         <classes>
-            <class name="bai3_excel_ddt.tests.LoginDDTTest"/>
-            <class name="bai2_pom.tests.LoginTest"/>
+            <class name="bai2_pom.tests.LoginTest">
+                <methods>
+                    <include name="testValidLogin"/>
+                    <include name="testInvalidLogin"/>
+                </methods>
+            </class>
+            <class name="bai3_excel_ddt.tests.LoginDDTTest">
+                <methods>
+                    <include name="testLoginSmoke"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Cart Functionality Tests">
+        <classes>
+            <class name="bai2_pom.tests.CartTest">
+                <methods>
+                    <include name="testAddItemToCart"/>
+                    <include name="testAddMultipleItemsAndVerify"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="Configuration Tests">
+        <classes>
+            <class name="bai5_config.tests.ConfigDemoTest"/>
         </classes>
     </test>
 </suite>
