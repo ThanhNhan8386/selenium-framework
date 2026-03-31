@@ -5,6 +5,7 @@
     <test name="Bai 5 Tests">
         <classes>
             <class name="bai5_config.tests.ConfigDemoTest"/>
+            <class name="bai3_excel_ddt.tests.LoginDDTTest"/>
         </classes>
     </test>
 </suite>

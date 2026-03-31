@@ -21,8 +21,13 @@ jobs:
           java-version: '17'
           cache: maven
 
+      - name: Setup Chrome for CI
+        uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: stable
+
       - name: Run Selenium tests
-        run: mvn test -Dbrowser=chrome -Denv=dev -DsuiteXmlFile=testng-smoke.xml
+        run: mvn test -Dbrowser=chrome -Denv=dev -DsuiteXmlFile=testng-bai5.xml -Dheadless=true
 
       - name: Upload surefire reports (if fail)
         if: failure()

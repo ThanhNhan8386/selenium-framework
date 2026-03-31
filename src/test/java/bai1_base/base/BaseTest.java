@@ -3,6 +3,7 @@ package bai1_base.base;
 import bai1_base.utils.ScreenshotUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -30,7 +31,19 @@ public abstract class BaseTest {
         if (browser.equalsIgnoreCase("edge")) {
             driver = new EdgeDriver();
         } else {
-            driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            
+            // Cấu hình headless mode cho CI environment
+            String headless = System.getProperty("headless");
+            if ("true".equals(headless)) {
+                options.addArguments("--headless");
+                options.addArguments("--no-sandbox");
+                options.addArguments("--disable-dev-shm-usage");
+                options.addArguments("--disable-gpu");
+                options.addArguments("--window-size=1920,1080");
+            }
+            
+            driver = new ChromeDriver(options);
         }
         
         // Lưu driver theo thread
